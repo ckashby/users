@@ -4,7 +4,13 @@
 <% if @pets.any? %>
   <ul>
     <% @pets.each do |pet| %>
-    <li><%= pet.name %></li>
+    <li><%= pet.name %> | <%= pet.user.email %> |
+      <%= link_to "Edit", edit_pet_path(pet) %> |
+      <%= link_to "Delete", pet_path(pet), method: :delete, data: { confirm: "Are you sure?" } %></li>
     <% end %>
   </ul>
 <% end %>
+
+<hr>
+<%= link_to "Back", root_path %> |
+<%= link_to "New Pet", new_pet_path %>
