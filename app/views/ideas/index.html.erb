@@ -4,7 +4,7 @@
 <ul>
   <% @ideas.each do |idea| %>
     <li><%= link_to idea.title, idea_path(idea) %> | <%= idea.user.email %> |
-    <%= link_to "Edit", edit_idea_path %> |
+    <%= link_to "Edit", edit_idea_path(idea) %> |
     <%= link_to "Delete", idea_path(idea), method: :delete, data: { confirm: "Are you sure?"} %></li>
   <% end %>
 </ul>
