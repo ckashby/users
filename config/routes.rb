@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :tasks
   resources :pets
   root 'pages#home'
   devise_for :users

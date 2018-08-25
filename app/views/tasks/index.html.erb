@@ -1,0 +1,15 @@
+<h1>Tasks Index</h1>
+<p>List all tasks</p>
+
+<% if @tasks.any? %>
+  <ul>
+    <% @tasks.each do |task| %>
+      <li><%= task.title %> | <% task.user.email %> |
+        <%= link_to "Edit", edit_task_path(task) %> |
+        <%= link_to "Delete", task_path(task), method: :delete, data: { confirm: "Are you sure?"} %></li>
+    <% end %>
+  </ul>
+<% end %>
+
+<%= link_to "Back", root_path %> |
+<%= link_to "New Task", new_task_path %>
