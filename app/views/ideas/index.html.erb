@@ -1,0 +1,13 @@
+<h1>Ideas Index</h1>
+
+<% if @ideas.any? %>
+<ul>
+  <% @ideas.each do |idea| %>
+    <li><%= link_to idea.title, idea_path(idea) %> | <%= idea.user.email %> |
+    <%= link_to "Edit", edit_idea_path(idea) %> |
+    <%= link_to "Delete", idea_path(idea), method: :delete, data: { confirm: "Are you sure?"} %></li>
+  <% end %>
+</ul>
+<% end %>
+<hr>
+<%= link_to "Back", root_path %> | <%= link_to "New Idea", new_idea_path %>

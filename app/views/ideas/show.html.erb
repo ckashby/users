@@ -1,0 +1,11 @@
+<h1>Show Idea</h1>
+
+<h2><%= @idea.title %></h2>
+
+<h3><%= @idea.created_at.strftime("%a, %B, %d, %Y") %></h3>
+
+<h4> Created by <%= @idea.user.email %>
+
+<hr>
+
+<%= link_to "Back", ideas_path %>
