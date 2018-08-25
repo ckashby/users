@@ -12,21 +12,21 @@ class TasksController < ApplicationController
   def create
     @task = current_user.tasks.build(task_params)
     if @task.save
-      redirect_to tasks_path   #TODO: show
+      redirect_to @task   #TODO: show
     else
       render :new
     end
   end
 
   def show
-  end 
+  end
 
   def edit
   end
 
   def update
     if @task.update(task_params)
-      redirect_to tasks_path, notice: 'Task successfully updated'  #TODO: show
+      redirect_to @task, notice: 'Task successfully updated'  #TODO: show
     else
       render :edit
     end

@@ -1,0 +1,10 @@
+<h1>Show Task</h1>
+
+<h2><%= @task.title %></h2>
+
+<h3><%= @task.created_at.strftime("%a, %B, %d, %Y") %></h3>
+
+By: <%= @task.user.email %>
+<hr>
+
+<%= link_to "Back", tasks_path %>
